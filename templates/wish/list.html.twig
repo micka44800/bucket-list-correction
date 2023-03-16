@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+  <section class="wish-list">
+    {% for w in wish %}
+        <div>{{ w.id }}</div>
+        <div>{{ w.title }}</div>
+        <div>{{ w.description }}</div>
+        <div>{{ w.author }}</div>
+        <div>{{ w.isPublished }}</div>
+         <div>{{ w.dateCreated  | date('d-m-Y-H-i-s')}}</div>
+
+    {% endfor %}
+  </section>
+
+{% endblock %}
+
+{% block title %}
+  The best series | {{ parent() }}
+{% endblock %}
+
